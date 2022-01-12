@@ -23,7 +23,7 @@ public struct Order: Codable {
 //public struct Product: DictionaryConvertor {
 public struct Product: Codable {
     let name: String?
-    let price: Int?
+    let price: Double?
     let imageURL: String?
 
     enum CodingKeys: String, CodingKey {

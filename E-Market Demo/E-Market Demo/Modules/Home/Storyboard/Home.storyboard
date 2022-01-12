@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,19 +64,44 @@
                                     <constraint firstItem="Lz5-4a-mXX" firstAttribute="leading" secondItem="SZq-Nb-FU1" secondAttribute="leading" constant="10" id="sL8-iS-yk3"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-xY-TKE">
+                                <rect key="frame" x="10" y="274" width="394" height="539"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T8o-Vj-NN1">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eXq-5V-oh1">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fYk-nO-gKs">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SZq-Nb-FU1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3nb-4c-q93"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="e3D-xY-TKE" secondAttribute="bottom" id="72G-JH-9jc"/>
+                            <constraint firstItem="e3D-xY-TKE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="ImP-rz-QL6"/>
                             <constraint firstItem="SZq-Nb-FU1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PcI-v0-GWJ"/>
+                            <constraint firstItem="e3D-xY-TKE" firstAttribute="top" secondItem="SZq-Nb-FU1" secondAttribute="bottom" id="eDn-XK-Jgg"/>
                             <constraint firstItem="SZq-Nb-FU1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="k7R-7t-e9o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e3D-xY-TKE" secondAttribute="trailing" constant="10" id="n8K-yw-Lz8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="a1q-tH-56k"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="closingTimeLabel" destination="LgU-dh-fhm" id="DFO-CQ-cxc"/>
+                        <outlet property="collectionView" destination="e3D-xY-TKE" id="cs7-ad-kuw"/>
                         <outlet property="openingTimeLabel" destination="U97-RN-72p" id="JDg-pa-M9p"/>
                         <outlet property="ratingLabel" destination="Sdo-xC-b5I" id="cYw-fv-k1u"/>
                         <outlet property="storeNameLabel" destination="6GT-OI-H4i" id="hJu-A4-lWb"/>

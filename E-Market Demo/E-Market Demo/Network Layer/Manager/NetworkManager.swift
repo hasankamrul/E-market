@@ -29,7 +29,7 @@ class NetworkManager: BaseViewController {
     
     let ECRouter = Router<AllApi>()
     
-    func getStoreInfo(completion: @escaping (_ movie: StoreInfo?,_ error: String?)->()) {
+    func getStoreInfo(completion: @escaping (_ storeInfo: StoreInfo?,_ error: String?)->()) {
         ECRouter.request(.storeInfo) { data, response, error in
             if error != nil {
                 completion(nil, "Please check your network connection.")
@@ -60,7 +60,7 @@ class NetworkManager: BaseViewController {
         }
     }
     
-    func getProducts(completion: @escaping (_ movie: [Product]?,_ error: String?)->()) {
+    func getProducts(completion: @escaping (_ products: [Product]?,_ error: String?)->()) {
         ECRouter.request(.products) { data, response, error in
             if error != nil {
                 completion(nil, "Please check your network connection.")
